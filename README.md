@@ -32,7 +32,7 @@ detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor(shape_predictor)
 
 (mStart, mEnd) = face_utils.FACIAL_LANDMARKS_IDXS["mouth"]
-```¡
+```
 
 The first three lines load the .dat file and the last line extracts the coordinates that we want (the mouth in our case). You can download the .dat file from here: https://github.com/AKSHAYUBHAT/TensorFace/blob/master/openface/models/dlib/shape_predictor_68_face_landmarks.dat
 
@@ -40,7 +40,7 @@ The first three lines load the .dat file and the last line extracts the coordina
 
 Now we just have the 20 coordinates that represent the mouth: 
 
-* insert image here   * 
+![Extracted Mouth](Mouth.jpg)
 
 In order to detect if the user is smiling or not, we create a mouth aspect ratio (MAR). In order to calculate this ratio, we have to find: 
 
@@ -51,7 +51,7 @@ In order to detect if the user is smiling or not, we create a mouth aspect ratio
 
 Here is the formula to find the MAR: 
 
-* insert image* 
+![MAR Equation Fingers](MAREquation.jpg)
 
 We can write a function in our code to perform to this calculation:
 
