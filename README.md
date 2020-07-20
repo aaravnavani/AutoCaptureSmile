@@ -40,7 +40,7 @@ The first three lines load the .dat file and the last line extracts the coordina
 
 Now we just have the 20 coordinates that represent the mouth: 
 
-![Extracted Mouth](mouth.jpg)
+![Extracted Mouth](mouth.png)
 
 In order to detect if the user is smiling or not, we create a mouth aspect ratio (MAR). In order to calculate this ratio, we have to find: 
 
@@ -51,7 +51,7 @@ In order to detect if the user is smiling or not, we create a mouth aspect ratio
 
 Here is the formula to find the MAR: 
 
-![MAR Equation](MARequation.jpg)
+![MAR Equation](MARequation.png)
 
 We can write a function in our code to perform to this calculation:
 
