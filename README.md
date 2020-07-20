@@ -34,7 +34,7 @@ predictor = dlib.shape_predictor(shape_predictor)
 (mStart, mEnd) = face_utils.FACIAL_LANDMARKS_IDXS["mouth"]
 ```
 
-The first three lines load the .dat file and the last line extracts the coordinates that we want (the mouth in our case). You can download the .dat file from [here](https://github.com/AKSHAYUBHAT/TensorFace/blob/master/openface/models/dlib/shape_predictor_68_face_landmarks.dat)
+The first three lines load the .dat file and the last line extracts the coordinates that we want (the mouth in our case). You can download the .dat file from [here](https://github.com/AKSHAYUBHAT/TensorFace/blob/master/openface/models/dlib/shape_predictor_68_face_landmarks.dat).
 
 ## Working with the smile 
 
