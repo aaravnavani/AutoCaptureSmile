@@ -127,15 +127,13 @@ And that's it!
 
 When we first run the code, the webcam loads up and a green circle outlines the mouth: 
 
-*insert image*
-
+![Mouth Detection](mouthDetected.png)
 
 When we smile, the program auto captures the frame and saves it in the same folder where the code is stored: 
 
-When we open up our folder, we can see the image stored: 
+![Smile](smile.png)
 
-* insert image* 
-
+![Folder](folder.png)
 
 
 
