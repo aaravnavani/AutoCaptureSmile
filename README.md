@@ -65,11 +65,15 @@ def smile(mouth):
     return mar
 ```
 
-We also want to detect the mouth from the user's face, so in order to do this, we use our predictor we loaded in earlier: 
-
+We also want to detect the mouth from the user's face. In order to do this, we first convert the image to grayscale for simplicity. We run the predictor we loaded in earlier and get the MAR  value from the mouth detected. Finally, we draw a green outline around the mouth. 
 
 ```python
-for rect in rects:
+while True:
+    frame = vs.read()    
+    frame = imutils.resize(frame, width=450)
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    rects = detector(gray, 0)
+    for rect in rects:
         shape = predictor(gray, rect)
         shape = face_utils.shape_to_np(shape)
         mouth= shape[mStart:mEnd]
@@ -79,7 +83,60 @@ for rect in rects:
         cv2.drawContours(frame, [mouthHull], -1, (0, 255, 0), 1)
 ```
 
-With some experimentation, we "define" a smile to have a MAR value of <0.3
+## Setting up the auto-capture 
+
+With some experimentation, we see that we can "define" a smile to have a MAR value less than 0.3 or greater than 0.38. If it is, then we capture the frame and save the file with name "opencv_frame_<counter>.png"
+
+```python
+if mar <= .3 or mar > .38 : 
+            counter = counter + 1
+        else:
+            if counter >= 15:
+                total += 1
+                frame = vs.read()
+
+                
+                
+                frame2= frame.copy()
+                
+                img_name = "picture_{}.png".format(total)
+                
+                cv2.imwrite(img_name, frame)
+
+                
+                print("{} written!".format(img_name))
+
+            counter = 0
+ ```
+
+Finally, we quit the video stream if the user presses "q" on their keyboard using the following code: 
+
+```python
+ key2 = cv2.waitKey(1) & 0xFF
+    if key2 == ord('q'):
+        break
+
+cv2.destroyAllWindows()
+vs.stop()
+```
+
+And that's it! 
+
+## Running the code 
+
+When we first run the code, the webcam loads up and a green circle outlines the mouth: 
+
+*insert image*
+
+
+When we smile, the program auto captures the frame and saves it in the same folder where the code is stored: 
+
+When we open up our folder, we can see the image stored: 
+
+* insert image* 
+
+
+
 
 
 
