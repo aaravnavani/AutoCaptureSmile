@@ -51,7 +51,7 @@ In order to detect if the user is smiling or not, we create a mouth aspect ratio
 
 Here is the formula to find the MAR: 
 
-![MAR Equation Fingers](MAREquation.jpg)
+![MAR Equation Fingers](MARequation.jpg)
 
 We can write a function in our code to perform to this calculation:
 
