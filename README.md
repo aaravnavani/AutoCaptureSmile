@@ -21,7 +21,8 @@ import cv2
 
 Inside the dlib package, there is an API called the facial landmark detector. This API has 68 (x,y) coordinates which point to specific facial structures. Here are all the 68 points visualized: 
 
-* insert image here* 
+![Facial Landmarks](faciallandmarks.jpg)
+
 
 Since we want to detect the user's smile, we want to focus on the points in the range [49, 68]. We get these features by using the following piece of code: 
 
